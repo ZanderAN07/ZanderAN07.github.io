@@ -14,9 +14,9 @@ timezone: America/Toronto
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Zander's Blogs # the main title
+title: Zander's Notebook # the main title
 
-tagline: 记录技术博客/翻译文章/个人随笔与感想 # it will display as the subtitle
+tagline: 技术博客/翻译文章/个人随笔 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
