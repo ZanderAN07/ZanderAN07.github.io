@@ -20,7 +20,7 @@ Zander's Notebook 是一个持续更新的知识记录空间，聚焦于以下�
 ---
 
 ## 作者简介 / About the Author
-安振彬 ZhenbinAn_
+安振彬 ZhenbinAn  
 First-year Computer Science student at the University of Toronto.  
 
 ---
