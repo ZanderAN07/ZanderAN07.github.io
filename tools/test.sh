@@ -55,13 +55,17 @@ main() {
   fi
 
   read_baseurl
+  build_dir="$SITE_DIR$_baseurl"
 
   # build
   JEKYLL_ENV=production bundle exec jekyll b \
-    -d "$SITE_DIR$_baseurl" -c "$_config"
+    -d "$build_dir" -c "$_config"
+
+  # Verify the portfolio homepage structure.
+  SITE_DIR="$build_dir" BASEURL="$_baseurl" bundle exec ruby test/portfolio_home_test.rb
 
   # test
-  bundle exec htmlproofer "$SITE_DIR" \
+  RUBYOPT="-EUTF-8:UTF-8" bundle exec htmlproofer "$SITE_DIR" \
     --disable-external \
     --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 }

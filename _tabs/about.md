@@ -1,27 +1,20 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 4
+order: 1
 ---
 
-## 🧭 关于本站 / About This Site
+## 关于我 / About Me
 
-Zander's Notebook 是一个持续更新的知识记录空间，聚焦于以下内容：
+安振彬（Zhenbin An），University of Toronto 计算机科学本科生，目前正在寻找软件开发实习机会。
 
-- 🌍 通识类知识笔记（哲学、社会科学、心理学等）  
-  _Notes on liberal arts: philosophy, social sciences, psychology, etc._  
-- 🎓 公开课的学习摘要与资料整理  
-  _Summaries and resources from online courses_  
-- 🌐 英文文章与学术资料的翻译与解析  
-  _Translations and analyses of English articles & academic resources_  
-- 💻 编程与技术博客，包括开发随笔与学习经验  
-  _Programming & tech blogs: dev journals and learning reflections_
+我会在这里持续记录学习过程、技术实践与个人成长。这个网站既是一份逐步完善的个人作品集，也保留了原有博客内容，方便展示思考与学习轨迹。
 
 ---
 
-## 作者简介 / About the Author
-安振彬 ZhenbinAn  
-First-year Computer Science student at the University of Toronto.  
+## 联系方式 / Contact
+
+- Email: [anzhenbin123@outlook.com](mailto:anzhenbin123@outlook.com)
+- GitHub: [ZanderAN07](https://github.com/ZanderAN07)
 
 ---
-

@@ -1,0 +1,211 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+.portfolio-page {
+  --portfolio-accent: #405bc7;
+  --portfolio-accent-dark: #30479f;
+  --portfolio-soft: rgba(64, 91, 199, 0.1);
+  padding-top: 2rem;
+}
+
+.portfolio-hero {
+  padding: clamp(2.5rem, 8vw, 6rem) 0 clamp(3rem, 8vw, 6.5rem);
+}
+
+.portfolio-eyebrow,
+.portfolio-section-label {
+  margin-bottom: 0.75rem;
+  color: var(--portfolio-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.portfolio-hero h1 {
+  margin: 0;
+  font-size: clamp(2.65rem, 8vw, 5.4rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.portfolio-hero h1 span {
+  display: block;
+  margin-top: 0.65rem;
+  color: var(--text-muted-color);
+  font-size: 0.42em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.portfolio-lead {
+  max-width: 760px;
+  margin: 2rem 0 0;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.portfolio-intro {
+  max-width: 680px;
+  margin-top: 1.1rem;
+  color: var(--text-muted-color);
+  font-size: 1.06rem;
+  line-height: 1.8;
+}
+
+.portfolio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.portfolio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 46px;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--btn-border-color);
+  border-radius: 0.65rem;
+  color: var(--text-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.portfolio-button:hover {
+  border-color: var(--portfolio-accent);
+  color: var(--portfolio-accent);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.portfolio-button-primary,
+.portfolio-button-primary:hover {
+  border-color: var(--portfolio-accent);
+  background: var(--portfolio-accent);
+  color: #fff;
+}
+
+.portfolio-button-primary:hover {
+  background: var(--portfolio-accent-dark);
+}
+
+.portfolio-section {
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  border-top: 1px solid var(--main-border-color);
+}
+
+.portfolio-section h2,
+.portfolio-closing h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.portfolio-section > p:last-child {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: var(--text-muted-color);
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.focus-card {
+  padding: 1.5rem;
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.85rem;
+  background: var(--card-bg);
+}
+
+.focus-card > i {
+  display: inline-grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin-bottom: 1.1rem;
+  border-radius: 0.6rem;
+  background: var(--portfolio-soft);
+  color: var(--portfolio-accent);
+  place-items: center;
+}
+
+.focus-card h3 {
+  margin-bottom: 0.65rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.focus-card p {
+  margin: 0;
+  color: var(--text-muted-color);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.portfolio-closing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 1.5rem 0 3rem;
+  padding: clamp(2rem, 5vw, 3rem);
+  border-radius: 1rem;
+  background: var(--portfolio-soft);
+}
+
+.portfolio-closing h2 {
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-closing p:last-child {
+  margin: 0;
+  color: var(--text-muted-color);
+}
+
+@media (max-width: 767px) {
+  .portfolio-page {
+    padding-top: 0;
+  }
+
+  .portfolio-hero {
+    padding-top: 3rem;
+  }
+
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-closing {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .portfolio-closing .portfolio-button {
+    width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-button {
+    transition: none;
+  }
+}
