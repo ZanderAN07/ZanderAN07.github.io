@@ -10,17 +10,20 @@ base_url = base_url.chomp("/") unless base_url == "/"
 page = Nokogiri::HTML5(File.read(File.join(site_dir, "index.html"), encoding: "UTF-8"))
 failures = []
 
-hero = page.at_css("main .portfolio-hero")
-failures << "expected a portfolio hero inside the main content" unless hero
+profile = page.at_css("main .portfolio-profile")
+failures << "expected a simple profile inside the main content" unless profile
 
-if hero
-  failures << "expected the hero to identify Zhenbin An" unless hero.at_css("h1")&.text.to_s.match?(/Zhenbin An/i)
-  failures << "expected a GitHub action" unless hero.at_css('a[href="https://github.com/ZanderAN07"]')
-  failures << "expected an email action" unless hero.at_css('a[href="mailto:anzhenbin123@outlook.com"]')
+if profile
+  failures << "expected the profile to identify Zhenbin An" unless profile.at_css("h1")&.text.to_s.match?(/Zhenbin An/i)
+  failures << "expected the profile to name the university and field" unless profile.text.match?(/University of Toronto.*Computer Science/im)
+  failures << "expected a GitHub link" unless profile.at_css('a[href="https://github.com/ZanderAN07"]')
+  failures << "expected an email link" unless profile.at_css('a[href="mailto:anzhenbin123@outlook.com"]')
 end
 
-failures << "expected an About section" unless page.at_css("main #about.portfolio-section")
-failures << "expected a technical focus section" unless page.at_css("main #focus.portfolio-section")
+failures << "the homepage should not contain secondary headings" if page.at_css("main h2, main h3")
+failures << "the homepage should not contain decorative buttons" if page.at_css("main .portfolio-button")
+failures << "the homepage should not contain focus cards" if page.at_css("main .focus-grid, main .focus-card")
+failures << "the homepage should not contain a closing callout" if page.at_css("main .portfolio-closing")
 failures << "projects should stay hidden until real work is added" if page.at_css("main #projects")
 failures << "project headings should stay hidden until real work is added" if page.css("main h1, main h2, main h3").any? { |heading| heading.text.match?(/projects?|项目/i) }
 

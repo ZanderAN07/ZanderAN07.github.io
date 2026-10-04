@@ -14,18 +14,12 @@ timezone: America/Toronto
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-<<<<<<< HEAD
 title: Zhenbin An # the main title
 
 tagline: Computer Science Student # it will display as the subtitle
-=======
-title: Zander's Site # the main title
-
-tagline: IDK # it will display as the subtitle
->>>>>>> cdbdbf85db1a6acec30184c81996783b01b87d2e
 
 description: >- # used by seo meta and the atom feed
-  Zhenbin An 的个人作品集。多伦多大学计算机科学本科生，正在寻找软件开发实习机会。
+  Zhenbin An — Computer Science student at the University of Toronto.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.

@@ -4,13 +4,8 @@ icon: fas fa-info-circle
 order: 1
 ---
 
-<<<<<<< HEAD
+Zhenbin An
 
----
+University of Toronto · Computer Science
 
-## Contact
-
-- Email: [anzhenbin123@outlook.com](mailto:anzhenbin123@outlook.com)
-- GitHub: [ZanderAN07](https://github.com/ZanderAN07)
-
----
+[Email](mailto:anzhenbin123@outlook.com) · [GitHub](https://github.com/ZanderAN07)
