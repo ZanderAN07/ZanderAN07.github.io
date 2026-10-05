@@ -26,6 +26,12 @@ failures << "the homepage should not contain focus cards" if page.at_css("main .
 failures << "the homepage should not contain a closing callout" if page.at_css("main .portfolio-closing")
 failures << "projects should stay hidden until real work is added" if page.at_css("main #projects")
 failures << "project headings should stay hidden until real work is added" if page.css("main h1, main h2, main h3").any? { |heading| heading.text.match?(/projects?|项目/i) }
+failures << "the homepage should not show a recent-updates panel when there are no posts" if page.at_css("#access-lastmod")
+
+retired_posts = ["VideoTest", "测试1"]
+retired_posts.each do |title|
+  failures << "retired post #{title} should not appear on the homepage" if page.text.include?(title)
+end
 
 sidebar_links = page.css("#sidebar .nav-link").map { |link| link["href"] }
 home_path = base_url.empty? || base_url == "/" ? "/" : "#{base_url}/"
